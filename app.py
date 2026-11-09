@@ -16,6 +16,7 @@ def about():
 def presentacion():
     # Videos para la página de inicio
     videos_inicio = [
+        {"titulo": "Despedida Promoción 2026", "embed_url": "https://www.facebook.com/andres.rubiano.874356/videos/1637855408068805/?idorvanity=1480710870651658", "tipo": "facebook"}
         {"titulo": "Presentacion Ciclas", "embed_url": "https://www.youtube.com/embed/ikpZ6Oj-Rf0", "tipo": "youtube"},
         {"titulo": "1103 Jornada Mañana", "embed_url": "https://www.youtube.com/embed/aIXn614w-tQ", "tipo": "youtube"},
         {"titulo": "Presentación Profes", "embed_url": "https://www.youtube.com/embed/6NTPqKBrwpw", "tipo": "youtube"},
