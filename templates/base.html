@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnaval ITIP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        .redes-sociales {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .btn-redondo {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-facebook {
+            background: #1877F2;
+        }
+
+        .btn-youtube {
+            background: #FF0000;
+        }
+
+        .btn-redondo:hover {
+            transform: scale(1.12);
+            color: white;
+            filter: brightness(1.2);
+        }
+
+        @media (max-width: 991px) {
+            .redes-sociales {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-success" href="#">Carnaval ITIP</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('home') }}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('previo') }}">Previo Al Carnaval Itipista</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('presentacion') }}">Presentaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('archivo')}}">Archivo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}">Acerca Del Proyecto</a>
+            </li>
+          </ul>
+
+          <!-- Redes sociales -->
+          <div class="redes-sociales">
+            <a href="https://www.facebook.com/share/g/1CMfEBPJJG/" target="_blank" rel="noopener noreferrer"
+               class="btn-redondo btn-facebook" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+
+            <a href="http://www.youtube.com/@CarnavalITIP" target="_blank" rel="noopener noreferrer"
+               class="btn-redondo btn-youtube" aria-label="YouTube">
+                <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    <footer class="bg-black text-center py-4 mt-5 text-muted border-top border-secondary">
+        <p class="mb-0">&copy;Página oficial del Carnaval Itipista Jornada Mañana | Creada por Andrés Rubiano para el Instituto Técnico Industrial Piloto</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

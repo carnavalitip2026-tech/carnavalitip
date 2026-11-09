@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    /* Estilos generales */
+    .carnaval {
+        background: #0d0f12;
+        color: #f3f4f6;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .carnaval .gold {
+        color: #15fa3b;
+    }
+
+    .carnaval .panel {
+        background: #17191e;
+        border: 1px solid #303139;
+        border-radius: 18px;
+        transition: .3s;
+    }
+
+    .carnaval .panel:hover {
+        border-color: #43ca04;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px #0005;
+    }
+
+    /* Presentación principal */
+    .carnaval .hero {
+        background: radial-gradient(circle at top, #292313, #0d0f12 65%);
+        border: 1px solid #35302a;
+        border-radius: 22px;
+    }
+
+    /* Carrusel */
+    .carnaval .carousel img {
+        height: 400px;
+        object-fit: cover;
+        filter: brightness(.65);
+    }
+
+    /* Adaptación a celulares */
+    @media (max-width: 576px) {
+        .carnaval .carousel img {
+            height: 250px;
+        }
+    }
+</style>
+
+<div class="carnaval">
+
+    <!-- Presentación principal -->
+    <header class="container text-center py-5">
+        <div class="hero p-4 p-md-5 shadow">
+            <h1 class="display-4 fw-bold mt-3">
+                Somos <span class="gold">Carnaval ITIP</span>
+            </h1>
+
+            <p class="col-md-8 fs-5 mx-auto text-secondary mt-3">
+                Esta página web tiene como objetivo principal dar a
+                conocer la importancia del carnaval itipista.
+                El dia 30 de Octubre de 2026 Sera celebrado en compañia de la institución : <strong class="gold">2026</strong> Edición # <strong class="gold">18</strong>.
+            </p>
+
+            <img src="{{ url_for('static', filename='img/logoitip.png') }}" alt="Logo ITIP" class="img-fluid mt-3" style="width: 180px;">
+
+            <div class="mt-4">
+                <a href="#momentos" class="btn btn-warning fw-bold px-4">
+                    Explorar carnaval →
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de carrusel -->
+    <section class="container my-5" id="momentos">
+        <h2 class="text-center fw-bold mb-4">
+            Momentos <span class="gold">inolvidables</span>
+        </h2>
+
+        <div id="carouselCarnaval"
+             class="carousel slide panel overflow-hidden shadow"
+             data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='img/IMG_1484.webp') }}" class="d-block w-100 mx-auto img-fluid" alt="Momentos Carnaval">
+                    <div class="carousel-caption">
+                        <h5 class="fw-bold">Nuestra cultura</h5>
+                        <p>Tradición que une generaciones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarjetas principales -->
+    <section class="container my-5 py-4" id="tradicion">
+        <h2 class="text-center fw-bold mb-4">
+            Explora nuestra <span class="gold">historia</span>
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="panel p-4 h-100">
+                    <h4 class="gold">Nuestra tradición</h4>
+                    <p class="text-secondary">
+                        Conoce cómo ha evolucionado el carnaval
+                        a lo largo de los años. Somos cultura y folclor.
+                    </p>
+                    <a href="{{ url_for('presentacion') }}" class="btn btn-outline-warning btn-sm">
+                        Leer más →
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel p-4 h-100">
+                    <h4 class="gold">Edición 2026</h4>
+                    <p class="text-secondary">
+                        Descubre los momentos y las expresiones
+                        artísticas de nuestro carnaval.
+                    </p>
+                    <a href="{{ url_for('previo') }}" class="btn btn-outline-warning btn-sm">
+                        Ver galería →
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel p-4 h-100">
+                    <h4 class="gold">Comunidad ITIP</h4>
+                    <p class="text-secondary">
+                        Reconoce el esfuerzo de estudiantes y docentes
+                        que hacen posible esta tradición.
+                    </p>
+                    <a href="#comunidad" class="btn btn-outline-warning btn-sm">
+                        Conocer más →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Historia del carnaval -->
+    <section class="container my-5 py-5 text-center" id="historia">
+        <span class="gold text-uppercase small fw-bold">
+            Nuestra identidad
+        </span>
+
+        <h2 class="fw-bold mt-2">Una tradición que permanece</h2>
+
+        <p class="text-secondary col-md-8 mx-auto mt-3">
+            El carnaval es un espacio de encuentro donde el arte,
+            la danza y la cultura fortalecen los lazos de nuestra
+            comunidad educativa. Cada edición deja recuerdos que
+            merecen conservarse para las futuras generaciones.
+        </p>
+    </section>
+
+    <!-- Comunidad ITIP -->
+    <section class="container my-5 pb-5 text-center" id="comunidad">
+        <div class="panel p-4 p-md-5">
+            <h2 class="fw-bold">
+                El carnaval lo construimos
+                <span class="gold">entre todos</span>
+            </h2>
+
+            <p class="text-secondary mt-3">
+                Celebramos el talento, la creatividad y el compromiso
+                de nuestra comunidad educativa.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="text-center py-4 border-top border-secondary">
+        <p class="gold fw-bold mb-1">Carnaval ITIP · 2026</p>
+        <small class="text-secondary">
+            Cultura, memoria y tradición institucional.
+        </small>
+    </footer>
+
+</div>
+
+{% endblock %}

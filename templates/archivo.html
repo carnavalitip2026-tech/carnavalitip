@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.tarjeta {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    transition: .3s;
+    border-top: 5px solid #e63946;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+}
+
+.tarjeta i {
+    font-size: 45px;
+    margin-bottom: 18px;
+}
+
+.tarjeta h3 {
+    font-weight: 750;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    color: #666;
+    min-height: 85px;
+}
+
+.tarjeta a {
+    display: inline-block;
+    padding: 11px 23px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.egresados { border-color: #e6a23c; }
+.actual { border-color: #1877f2; }
+.youtube { border-color: #e62117; }
+
+.egresados i { color: #e6a23c; }
+.actual i { color: #1877f2; }
+.youtube i { color: #e62117; }
+
+.egresados a { background: #e6a23c; }
+.actual a { background: #1877f2; }
+.youtube a { background: #e62117; }
+</style>
+
+<section class="comunidad">
+    <div class="container text-center">
+
+        <h2>Conéctate con el Carnaval ITIP</h2>
+        <p class="text-muted">
+            Haz parte de nuestra comunidad, recuerda las ediciones anteriores
+            y acompaña las nuevas experiencias del Carnaval.
+        </p>
+
+        <div class="tarjetas">
+
+            <!-- Egresados y ediciones anteriores -->
+            <div class="tarjeta egresados">
+                <i class="bi bi-people-fill"></i>
+                <h3>Egresados y recuerdos</h3>
+                <p>
+                    Un espacio para nuestros egresados y para revivir
+                    los carnavales de ediciones anteriores.
+                    Comparte recuerdos y mantén viva nuestra historia.
+                </p>
+                <a href="https://www.facebook.com/share/g/1Lf6mJVPwo/" target="_blank">
+                    <i class="bi bi-facebook"></i> Visitar grupo
+                </a>
+            </div>
+
+            <!-- Carnaval actual -->
+            <div class="tarjeta actual">
+                <i class="bi bi-calendar-event-fill"></i>
+                <h3>Carnaval actual</h3>
+                <p>
+                    ¿Quieres estar al tanto de la edición actual?
+                    Únete a nuestro grupo oficial y descubre novedades,
+                    actividades, fotografías y publicaciones.
+                </p>
+                <a href="https://www.facebook.com/share/g/1CMfEBPJJG/" target="_blank">
+                    <i class="bi bi-facebook"></i> Visitar grupo
+                </a>
+            </div>
+
+            <!-- Canal de YouTube -->
+            <div class="tarjeta youtube">
+                <i class="bi bi-youtube"></i>
+                <h3>Canal de YouTube</h3>
+                <p>
+                    Disfruta de videos, presentaciones
+                    y contenido audiovisual de las diferentes
+                    experiencias del Carnaval ITIP.
+                </p>
+                <a href="http://www.youtube.com/@CarnavalITIP" target="_blank">
+                    <i class="bi bi-youtube"></i> Ver canal
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
